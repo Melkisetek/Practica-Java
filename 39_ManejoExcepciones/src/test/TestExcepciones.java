@@ -13,6 +13,5 @@ public class TestExcepciones {
         }
         System.out.println("resultado = "+resultado);
     }
-    //hola mundo
-
+   
 }
