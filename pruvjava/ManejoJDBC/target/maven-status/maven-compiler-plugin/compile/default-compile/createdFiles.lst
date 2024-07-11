@@ -1,0 +1,6 @@
+domain\Persona.class
+mx\com\gm\jdbc\introduccionjdbc\IntroduccionJDBC.class
+Testmenk\TestManejoPersonas.class
+datos\Conexion.class
+datos\PersonaDAO.class
+Testmenk\TestMysqlJDBC.class

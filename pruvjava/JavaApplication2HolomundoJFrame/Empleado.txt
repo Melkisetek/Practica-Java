@@ -1,0 +1,5 @@
+﻿
+Codigo: 78427, Nombre: Menma, Telefono: 493829, Dirección: Santa
+Codigo: 4324, Nombre: Juan, Telefono: 3213, Dirección: Guatemala
+Codigo: 4324, Nombre: Juan Ochoa, Telefono: 3213, Dirección: Guatemala
+Nombre: Jorge, DPI: 79878797, Fecha de Nacimiento: 02/09/2003, Telefono: 766686, Dirección: Chimaltenango
