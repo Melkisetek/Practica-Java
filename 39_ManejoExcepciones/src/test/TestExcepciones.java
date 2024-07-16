@@ -11,6 +11,9 @@ public class TestExcepciones {
             //e.printStackTrace(System.out);//muestra toda la pila de excepciones
             System.out.println(e.getMessage());
         }
+        finally{
+            System.out.println("Se reviso la division entre cero");
+        }
         System.out.println("resultado = "+resultado);
     }
    
