@@ -1,12 +1,18 @@
 package test;
 //Es estatico lo podemos simplificar 
 import static aritmetica.Aritmetica.division;
+
+import excepciones.OperacionExcepcion;
 public class TestExcepciones {
     public static void main(String[] args) {
         int resultado = 0;
         try {
             resultado = division(10 , 0);
-        } catch (Exception e) {
+        }catch (OperacionExcepcion e){
+            System.out.println("Ocurrio un error de tipo OperacionExcepcion");
+            System.out.println(e.getMessage());
+        }
+        catch (Exception e) {
             System.out.println("Ocurrió un error: ");
             //e.printStackTrace(System.out);//muestra toda la pila de excepciones
             System.out.println(e.getMessage());
