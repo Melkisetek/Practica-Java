@@ -12,7 +12,7 @@ public class TestColeccion{
         miLista.add("Viernes");
 
 
-        imprimir(miLista); //Método utilizando polimorfismo
+       // imprimir(miLista); //Método utilizando polimorfismo
 
         //for(Object elemento: miLista){
         //    System.out.println("elemento = "+elemento );
@@ -23,15 +23,19 @@ public class TestColeccion{
     
 
        //Map -----------------------------------------
+       //Map hereda de la interface Map y la clase asociada es HashMap
        Map miMapa = new HashMap<>();
        miMapa.put("Valor1", "Juan");
        miMapa.put("Valor2", "Orlando");
        miMapa.put("Valor3", "jiren");
+       miMapa.put(23, "Número");
    
        //String elemento = (String) miMapa.get("Valor1");
        //System.out.println("elemento = "+elemento);
 
-       imprimir(miMapa.keySet());//imprimir llaves
+
+
+       //imprimir(miMapa.keySet());//imprimir llaves no mantiene orden
        imprimir(miMapa.values());//imprimir valores
        
     }
