@@ -9,22 +9,23 @@ public class Persona {
     private String email;
     private String telefono;
 
-    public Persona() {
+    // constructor vacío
+    public Persona() { 
         
     }
-    //Construcor
+    //Constructor con id para una busqueda rápida.
     
     public Persona(int idPersona) {
         this.idPersona = idPersona;
     }
-
+    //Constructor para agregar datos en BD
     public Persona(String nombre, String apellido, String email, String telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.telefono = telefono;
     }
-
+    //Constructor para el caso de modificación de valores en el id
     public Persona(int idPersona, String nombre, String apellido, String email, String telefono) {
         this.idPersona = idPersona;
         this.nombre = nombre;
@@ -33,7 +34,7 @@ public class Persona {
         this.telefono = telefono;
     }
     
-    // Getter and Setter
+    // Getter and Setter (en caso de modificar un atributo de manera individual)
 
     public int getIdPersona() {
         return idPersona;
@@ -77,9 +78,9 @@ public class Persona {
    
      
 
-    //toString
+    //toStringString
     @Override
-    public String toString() {
+    public  toString() {
         return "persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", telefono=" + telefono + '}';
     }
     

@@ -10,12 +10,13 @@ public class Conexion {
     private static final String JDBC_USER="root";
     private static final String JDBC_PASSWORD="Admin";
     
+    //Creamos un método para la configuración de la conexión
     public static Connection getConnection() throws SQLException{
         return DriverManager.getConnection(JDBC_URL,JDBC_USER,JDBC_PASSWORD);
         
     }
-    
-    public static void close(ResultSet rs) throws SQLException{
+    //Agregamos métodos para cerrar los objetos que hemos abieto
+    public static void close(ResultSet rs) throws SQLException{ 
         rs.close();
     }
     

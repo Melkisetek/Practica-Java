@@ -7,17 +7,19 @@ import domain.Persona;
 import java.sql.*;
 import java.util.*;
 
-
+// Clase encargada de insert, update, delete entre otros
 
 public class PersonaDAO {
 
+    //Definimos los atributos de sentencias
     private static final String SQL_SELECT = "SELECT id_persona, nombre, apellido, email, telefono FROM testmenk.persona";
     private static final String SQL_INSERT = "INSERT INTO persona(nombre, apellido, email, telefono ) VALUES(?, ?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE persona SET nombre = ?, apellido = ?, email = ?, telefono = ? WHERE id_persona = ?";
     private static final String SQL_DELETE = "DELETE FROM persona WHERE id_persona = ?";
     
-    
+    // Método List, llamado seleccionar
     public List<Persona> seleccionar() {
+        //Definir variables que se van a utilizar
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -25,9 +27,10 @@ public class PersonaDAO {
         List<Persona> personas = new ArrayList<>();
 
         try {
-            conn = getConnection();
+            conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
+            //ciclo para saber si hay registros que iterar
             while (rs.next()) {
                 int idPersona = rs.getInt("id_persona");
                 String nombre = rs.getString("nombre");
@@ -35,15 +38,16 @@ public class PersonaDAO {
                 String email = rs.getString("email");
                 String telefono = rs.getString("telefono");
 
+                //Crear un nuevo objeto de tipo persona, para que se pueda reutilizar y utilizar para otros sistemas.
                 persona = new Persona(idPersona, nombre, apellido, email, telefono);
-
+                //finalmente agregar la persona que habiamos recuperado.
                 personas.add(persona);
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        } finally {
+        } finally { // Este bloque siempre se va a ejecutar
             try {
-                
+                // cerrar las conexiones, en caso de que esten abiertos.
                 Conexion.close(rs);
                 Conexion.close(stmt);
                 Conexion.close(conn);
